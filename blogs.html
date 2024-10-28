@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Personal Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset and Basic Styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro-box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .blogs-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .blog-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .blog-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 15px;
+        }
+
+        .blog-content h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .blog-content p {
+            margin: 10px 0;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Hidden Message Styling */
+        .message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+            width: 80%;
+            max-width: 600px;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+
+        .message .close {
+            display: block;
+            text-align: right;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .message .close a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .message .close a:hover {
+            color: #f00;
+        }
+
+        #message1:target,
+        #message2:target,
+        #message3:target,
+        #message4:target,
+        #message5:target {
+            display: block;
+        }
+
+        .backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+
+        #message1:target ~ .backdrop,
+        #message2:target ~ .backdrop,
+        #message3:target ~ .backdrop,
+        #message4:target ~ .backdrop,
+        #message5:target ~ .backdrop {
+            display: block;
+        }
+    </style>
+</head>
+<body class="blogs-page">
+    <header>
+        <h1>Personal Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro-box">
+            <h2>Top Most Popular Online Games in the Philippines</h2>
+            <p>Explore the most popular online games that have captured the interest of gamers across the Philippines. From strategic gameplay to immersive worlds, discover what makes these games stand out.</p>
+        </section>
+
+        <section class="blogs-list">
+            <div class="blog-container">
+                <article>
+                    <img src="images/ml.jpeg" alt="Mobile Legends: Bang Bang" class="blog-img">
+                    <div class="blog-content">
+                        <h3>Mobile Legends: Bang Bang</h3>
+                        <p>Discover why Mobile Legends is a favorite in the Philippines with its fast-paced gameplay and team-based strategy.</p>
+                        <a href="#message1" class="read-more">Read more</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="blog-container">
+                <article>
+                    <img src="images/coc.png" alt="Clash of Clans" class="blog-img">
+                    <div class="blog-content">
+                        <h3>Clash of Clans</h3>
+                        <p>Explore the world of Clash of Clans and its enduring popularity in the Philippines with its strategic gameplay and clan-based battles.</p>
+                        <a href="#message2" class="read-more">Read more</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="blog-container">
+                <article>
+                    <img src="images/pubg.webp" alt="PUBG Mobile" class="blog-img">
+                    <div class="blog-content">
+                        <h3>PUBG Mobile</h3>
+                        <p>Learn about PUBG Mobile’s popularity in the Philippines and its influence on the mobile battle royale genre.</p>
+                        <a href="#message3" class="read-more">Read more</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="blog-container">
+                <article>
+                    <img src="images/Genshin.webp" alt="Genshin Impact" class="blog-img">
+                    <div class="blog-content">
+                        <h3>Genshin Impact</h3>
+                        <p>Find out why Genshin Impact has captured the hearts of Filipino gamers with its open-world exploration and engaging storyline.</p>
+                        <a href="#message4" class="read-more">Read more</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="blog-container">
+                <article>
+                    <img src="images/cod.webp" alt="Call of Duty: Mobile" class="blog-img">
+                    <div class="blog-content">
+                        <h3>Call of Duty: Mobile</h3>
+                        <p>Read about Call of Duty: Mobile’s rise in popularity and its impact on the mobile FPS gaming community in the Philippines.</p>
+                        <a href="#message5" class="read-more">Read more</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Personal Playthroughs. All rights reserved.</p>
+    </footer>
+
+    <!-- Hidden messages -->
+    <div id="message1" class="message">
+        <span class="close"><a href="#">×</a></span>
+        <h2>Mobile Legends: Bang Bang</h2>
+        <p>Mobile Legends: Bang Bang is a fast-paced, action-packed multiplayer online battle arena (MOBA) game that has become a favorite in the Philippines. Known for its strategic gameplay and team-based battles, Mobile Legends offers an exciting experience for gamers of all skill levels. The game features a variety of heroes, each with unique abilities, allowing players to create diverse strategies and tactics to achieve victory.</p>
+        <p>The game has seen significant growth in the Philippines, thanks to its engaging gameplay and frequent updates. Mobile Legends also supports esports, with numerous tournaments and competitions held regularly. This has further fueled its popularity and created a vibrant gaming community around the game.</p>
+        <p>In addition to its gameplay, Mobile Legends has made a significant impact on the mobile gaming landscape, setting a benchmark for other games in the genre. Its success can be attributed to its accessibility, regular updates, and strong community support.</p>
+    </div>
+
+    <div id="message2" class="message">
+        <span class="close"><a href="#">×</a></span>
+        <h2>Clash of Clans</h2>
+        <p>Clash of Clans is a strategy-based mobile game where players build and upgrade their base, train armies, and raid other players for resources. It has captivated gamers with its in-depth strategic elements and clan-based warfare, fostering a strong community in the Philippines.</p>
+        <p>Its engaging gameplay and frequent updates keep players coming back, while the clan system encourages social interaction and collaboration. Clash of Clans has become a staple in mobile gaming due to its innovative approach to strategy and community building.</p>
+    </div>
+
+    <div id="message3" class="message">
+        <span class="close"><a href="#">×</a></span>
+        <h2>PUBG Mobile</h2>
+        <p>PUBG Mobile brings the popular battle royale experience to mobile devices with intense gameplay and large-scale battles. Players parachute onto an island and fight to be the last person or team standing. Its realistic graphics and strategic gameplay have made it a favorite in the Philippines.</p>
+        <p>The game’s dynamic environment and constant updates keep the experience fresh and engaging. PUBG Mobile has had a significant impact on the mobile battle royale genre, setting standards for future games.</p>
+    </div>
+
+    <div id="message4" class="message">
+        <span class="close"><a href="#">×</a></span>
+        <h2>Genshin Impact</h2>
+        <p>Genshin Impact is an open-world action RPG that offers a stunningly detailed world and an engaging storyline. Players explore the fantasy land of Teyvat, uncovering secrets and battling enemies with a variety of characters, each with unique abilities.</p>
+        <p>Its visually appealing graphics and immersive gameplay have captured the attention of many gamers in the Philippines. Genshin Impact’s blend of exploration, combat, and storytelling makes it a standout title in the mobile gaming industry.</p>
+    </div>
+
+    <div id="message5" class="message">
+        <span class="close"><a href="#">×</a></span>
+        <h2>Call of Duty: Mobile</h2>
+        <p>Call of Duty: Mobile brings the renowned FPS franchise to mobile devices with a variety of modes, including battle royale and classic multiplayer. Its high-quality graphics and responsive controls have made it a hit in the Philippines.</p>
+        <p>The game’s robust content and frequent updates offer a satisfying experience for FPS fans, providing a mix of tactical gameplay and fast-paced action. Call of Duty: Mobile continues to evolve and attract players with its compelling gameplay and competitive scene.</p>
+    </div>
+
+    <div class="backdrop"></div>
+</body>
+</html>

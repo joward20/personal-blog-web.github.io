@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Gaming Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            overflow: auto; /* Allow scrolling */
+            position: relative;
+        }
+
+        header, footer {
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            z-index: 2; /* Ensure it is above the video */
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .featured-content, .video-section, .social-media {
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for sections */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-media {
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icon {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            color: #007bff;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+
+        /* Ensure the background video covers the entire page */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0; /* Behind all content */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem; /* Adjust font size for smaller screens */
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .btn-primary {
+                padding: 0.5rem 1rem;
+            }
+
+            .featured-content h3, .video-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .social-icons a {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body id="home">
+    <!-- Background Video -->
+    <video class="background-video" autoplay muted loop>
+        <source src="video/Download (9).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>Personal Gaming Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-video-container">
+                <video src="video/Download (3).mp4" autoplay muted loop class="hero-video"></video>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <h2>Welcome to My Personal Blog</h2>
+                <p>Discover the latest insights, reviews, and strategies for your favorite games.</p>
+                <a href="blogs.html" class="btn-primary">Read Our Blog</a>
+            </div>
+        </section>
+
+        <section class="featured-content">
+            <h3>Latest Blog Posts</h3>
+            <video controls>
+                <source src="video/Download.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <article>
+                <h4><a href="blog-post-2.html">Top 5 Heroes to Master in Mobile Legends: Bang Bang</a></h4>
+                <p>Check out the top five heroes you should master to become an MVP in Mobile Legends: Bang Bang. Learn their skills, combos, and best builds for every match.</p>
+            </article>
+        </section>
+
+        <section class="video-section">
+            <h2>Featured</h2>
+            <video controls>
+                <source src="video/Download (5).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section class="video-section">
+            <h2></h2>
+            <video controls>
+                <source src="video/Download (4).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section class="social-media">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="mailto:jowardcalado@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Personal Playthroughs. All rights reserved.</p>
+    </footer>
+</body>
+</html>
